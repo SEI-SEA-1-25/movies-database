@@ -54,14 +54,22 @@ FROM directors d
 JOIN movies m
 ON d.id = m.director_id
 WHERE m.title = 'There Will Be Blood';
+
 3. Find all of J's favorites.
+SELECT movies.title, users.name
+FROM movies
+JOIN users_movies
+ON movies.id = users_movies.movie_id
+JOIN users ON users_movies.user_id = user.id
+WHERE users.name = 'J';
 
 4. Find everyone who added 'The Shining' as a favorite movie.
 5. List all the movie titles and their corresponding directors.
 SELECT m.title, d.name
-FROM movie m
-JOIN director d
-ON
+FROM movies m
+JOIN directors d
+ON d.id = m.director_id;
+
 6. Select the movie title and user name for all of the "favorites" represented by the users_movies table.
 
 ### PART 3: Advanced Queries!
