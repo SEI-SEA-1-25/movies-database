@@ -19,17 +19,57 @@ There are 18 directors, 31 movies, 6 users, and 44 `user_movies`.
 ### PART 1: Basic SQL!
 
 1. Add some movies! Add the title and synopsis of the last 5 movies you've seen that aren't already in the movies table. (If they have directors who aren't in the database, you'll have to add the directors as well!)
+
+INSERT INTO movies
+(title, synopsis)
+VALUES
+('Jaws', 'Shark eats people'); 
+
 2. As you can see, there is a column for `release_date` in the movies table that hasn't been filled in yet. Add the release date of your 5 favorite movies in the movies table.
+
+UPDATE movies 
+SET release_date = 1970
+WHERE title = 'Jaws';
+
+
 3. Delete 5 movies from the list you don't like. Like them all? Add 5 movies that are total flops and then delete those suckers 😝.
+
+DELETE FROM movies 
+WHERE title = 'Jaws';
+
 4. Add yourself as a user and create records in `users_movies`  to record your favorites.
 
 ### PART 2: Joins!
-
+\
 1. Select all the movies directed by Alex Garland.
+SELECT m.title, d.name 
+FROM movies m
+JOIN directors d
+ON d.id = m.director_id
+WHERE d.name = 'Alex Garland';
+
 2. Find the director who directed "There Will Be Blood".
+SELECT d.name
+FROM directors d
+JOIN movies m
+ON d.id = m.director_id
+WHERE m.title = 'There Will Be Blood';
+
 3. Find all of J's favorites.
+SELECT movies.title, users.name
+FROM movies
+JOIN users_movies
+ON movies.id = users_movies.movie_id
+JOIN users ON users_movies.user_id = user.id
+WHERE users.name = 'J';
+
 4. Find everyone who added 'The Shining' as a favorite movie.
 5. List all the movie titles and their corresponding directors.
+SELECT m.title, d.name
+FROM movies m
+JOIN directors d
+ON d.id = m.director_id;
+
 6. Select the movie title and user name for all of the "favorites" represented by the users_movies table.
 
 ### PART 3: Advanced Queries!
