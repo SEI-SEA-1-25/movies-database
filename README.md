@@ -86,10 +86,12 @@ There are 18 directors, 31 movies, 6 users, and 44 `user_movies`.
 These are gonna be hard. Make sure to use your friend google as a resource.
 
 1. List the movies with the number of favorites they have.
-    SELECT movies.title, COUNT(users.id) FROM movies
+    SELECT movies.title, COUNT(movies.title)AS Frequency FROM movies
     JOIN users_movies
-    ON users_movies.movie_id = movies.id;
+    ON users_movies.movie_id = movies.id
+    GROUP BY movies.title;
 
 2. List the names of directors along with the number of favorites that exist for all of the movies they've made, ordered by number of favorites descending.
+    SELECT directors.name, COUNT(directors.id) FROM
 3. List the user name, director name and favorite count of all of the user/director combinations (based on the users_movies table).
 4. Find the favorite director -- the director whose movies have the most favorites.
