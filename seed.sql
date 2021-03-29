@@ -169,20 +169,13 @@ INSERT INTO movies (title, synopsis, director_id) VALUES
     'Sunshine',
     'In 2057, with the Earth in peril from the dying Sun, the crew is sent on a mission to reignite the star with a nuclear bomb that has a mass equivalent to Manhattan Island.',
     6
-  ),
-  (
-    'American Beauty',
-    'A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter''s best friend.',
-    18
   );
 
   INSERT INTO users (name) VALUES
-  ('John B'),
-  ('John M'),
-  ('J'),
-  ('Drake'),
-  ('Taka'),
-  ('Dominic');
+  ('Joel'),
+  ('Dexter'),
+  ('Ryan'),
+  ('Pete');
 
 INSERT INTO users_movies (user_id, movie_id) VALUES
   (1, 18),
@@ -217,20 +210,4 @@ INSERT INTO users_movies (user_id, movie_id) VALUES
   (4, 16),
   (4, 17),
   (4, 18),
-  
-  (5, 31),
-  (5, 28),
-  (5, 24),
-  (5, 20),
-  (5, 19),
-  (5, 12),
-  (5, 13),
-  
-  (6, 17),
-  (6, 15),
-  (6, 27),
-  (6, 25),
-  (6, 13),
-  (6, 21),
-  (6, 28),
-  (6, 1);
+  (4, 29);

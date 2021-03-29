@@ -16,21 +16,20 @@ There are 18 directors, 31 movies, 6 users, and 44 `user_movies`.
 
 `user_movies` is a join table that represents which users would claim which movies as favorites. Each user can have many favorite movies, and each movie can be favorited by many users.
 
-### PART 1: Basic SQL!
+### PART 1: Creating linked data
+1. Think of your favorite movie that isn't directed by someone on the list of directors. Add that movie to the movies table.
+1. Add the director of your new movie to the directors table.
+1. Update your new movie to have the correct director.
+1. Add yourself to the users table.
+1. Add a row to the users_movies table so that your user has the new movie as a favorite.
 
-1. Add some movies! Add the title and synopsis of the last 5 movies you've seen that aren't already in the movies table. (If they have directors who aren't in the database, you'll have to add the directors as well!)
-2. As you can see, there is a column for `release_date` in the movies table that hasn't been filled in yet. Add the release date of your 5 favorite movies in the movies table.
-3. Delete 5 movies from the list you don't like. Like them all? Add 5 movies that are total flops and then delete those suckers 😝.
-4. Add yourself as a user and create records in `users_movies`  to record your favorites.
-
-### PART 2: Joins!
+### PART 2: Querying linked data with JOINS!!!
 
 1. Select all the movies directed by Alex Garland.
 2. Find the director who directed "There Will Be Blood".
-3. Find all of J's favorites.
-4. Find everyone who added 'The Shining' as a favorite movie.
-5. List all the movie titles and their corresponding directors.
-6. Select the movie title and user name for all of the "favorites" represented by the users_movies table.
+3. Find all of Ryan's favorites.
+4. Find everyone who added "The Shining" as a favorite movie.
+5. Find the names of all users who favorited a movie directed by Joel Cohen.
 
 ### PART 3: Advanced Queries!
 
