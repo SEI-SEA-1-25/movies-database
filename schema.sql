@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS movies (
   title VARCHAR(255) NOT NULL,
   release_date INTEGER,
   synopsis TEXT,
-  director_id INTEGER REFERENCES directors(id)
+  director_id INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS users (
@@ -18,6 +18,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS users_movies (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  movie_id INTEGER REFERENCES movies(id)
+  user_id INTEGER,
+  movie_id INTEGER
 );
